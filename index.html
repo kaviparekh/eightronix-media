@@ -92,7 +92,7 @@ Eightronix<span class="text-cyan-400">Media</span>
         </div>
     </nav>
 
-    <section class="relative min-h-screen flex items-center justify-center pt-20 px-6">
+    <section class="relative min-h-screen flex items-center justify-center pt-20 px-6 reveal">
         <div class="text-center max-w-4xl mx-auto z-10">
             <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight mb-6">
                 Turning <span class="text-gradient">Attention</span> <br /> Into <span class="text-gradient">Revenue.</span>
@@ -140,7 +140,7 @@ Eightronix<span class="text-cyan-400">Media</span>
         </div>
     </section>
 
-    <section id="services" class="py-24 px-6 relative">
+    <section id="about" class="py-24 px-6 relative border-t border-white/5 bg-dark/50 reveal">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="font-display text-3xl md:text-5xl font-bold mb-4">Our Services</h2>
@@ -194,7 +194,7 @@ Eightronix<span class="text-cyan-400">Media</span>
         </div>
     </section>
 
-    <section class="py-24 px-6 border-y border-white/5 bg-[#0f0f13]">
+    <section class="py-24 px-6 border-y border-white/5 bg-[#0f0f13] reveal">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
             
             <div>
@@ -259,7 +259,7 @@ Eightronix<span class="text-cyan-400">Media</span>
         </div>
     </section>
 
-    <section id="portfolio" class="py-24 px-6">
+    <section id="portfolio" class="py-24 px-6 reveal">
         <div class="max-w-7xl mx-auto">
             <h2 class="font-display text-3xl md:text-5xl font-bold mb-12 text-center">Our Work</h2>
             
@@ -284,7 +284,7 @@ Eightronix<span class="text-cyan-400">Media</span>
         </div>
     </section>
 
-    <section class="py-24 px-6 bg-dark/50 border-y border-white/5">
+    <section class="py-24 px-6 bg-dark/50 border-y border-white/5  reveal">
         <div class="max-w-7xl mx-auto">
             <h2 class="font-display text-3xl md:text-5xl font-bold mb-12 text-center">What Our Clients Say</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -322,7 +322,7 @@ Eightronix<span class="text-cyan-400">Media</span>
         </div>
     </section>
 
-    <section class="py-24 px-6">
+    <section class="py-24 px-6 reveal">
         <div class="max-w-5xl mx-auto bg-gradient-to-r from-purple-900 to-blue-900 rounded-3xl p-12 text-center relative overflow-hidden shadow-[0_0_40px_rgba(138,43,226,0.3)]">
             <div class="absolute top-0 right-0 w-64 h-64 bg-secondary blur-[100px] opacity-20 rounded-full"></div>
             <div class="relative z-10">
@@ -340,7 +340,7 @@ Eightronix<span class="text-cyan-400">Media</span>
         </div>
     </section>
 
-    <section id="contact" class="py-24 px-6 relative border-t border-white/5 bg-dark">
+    <section id="contact" class="py-24 px-6 relative border-t border-white/5 bg-dark reveal">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
             
             <div>
@@ -415,6 +415,30 @@ Eightronix<span class="text-cyan-400">Media</span>
             &copy; 2026 Eightronix Media – All Rights Reserved.
         </div>
     </footer>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".reveal").forEach((section) => {
+
+gsap.from(section, {
+opacity: 0,
+y: 80,
+duration: 1,
+scrollTrigger: {
+trigger: section,
+start: "top 80%",
+toggleActions: "play none none none"
+}
+
+});
+
+});
+</script>
 
 </body>
 </html>
